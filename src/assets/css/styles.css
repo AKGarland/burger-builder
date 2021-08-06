@@ -1,0 +1,16 @@
+.selected {
+  background-color:rgb(102, 255, 102);
+}
+
+.ingredient-card-img {
+  width: 200;
+  height: 150;
+}
+
+.remove-topping-btn {
+  background-color: red;
+  border-radius: 1.5em;
+  width: 2em;
+  height: 2em;
+  border: 2px solid black;
+}
