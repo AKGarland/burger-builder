@@ -16,19 +16,16 @@ export default function BurgerDisplay(props) {
       <div className="burger-display-container" style={{ height: 400, width: 450, background: '#aaade2' }}>
         {base !== undefined ?
           (< img src={base.imgSrc.split('.png')[0] + "-base.png"}
-            className="card-img-top" style={{ position: 'absolute', width: 400, height: 400, paddingTop: 150 }} />)
+            className="card-img-top building-burger" id="burger-base" />)
           : (<></>)}
         {props.ingredients.toppings.map((ingredient, i) =>
-        (<img src={ingredient.imgSrc} className="card-img-top"
-          key={i} style={{ position: 'absolute', width: 400, height: 400, padding: "40 0" }} />))
+          (<img src={ingredient.imgSrc} className="card-img-top building-burger" id={`topping-${i}`} key={i} />))
         }
-        {protein !== undefined ? (<img src={protein.imgSrc} className="card-img-top"
-          style={{ position: 'absolute', width: 400, height: 400, paddingTop: 100 }} />)
+        {protein !== undefined ? (<img src={protein.imgSrc} className="card-img-top building-burger" id="protein-main" />)
           : (<></>)
         }
         {base !== undefined ?
-          (< img src={base.imgSrc.split('.png')[0] + "-lid.png"} className="card-img-top"
-            style={{ position: 'absolute', width: 400, height: 400, paddingBottom: 150 }} />)
+          (< img src={base.imgSrc.split('.png')[0] + "-lid.png"} className="card-img-top building-burger" id="burger-lid" />)
           : (<></>)}
       </div>
       <div className="card-body">

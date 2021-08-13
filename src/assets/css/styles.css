@@ -21,3 +21,43 @@
   height: 2em;
   border: 2px solid black;
 }
+
+.building-burger {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.toppings {
+  height: 200px;
+}
+
+#topping-0 {
+  padding: 70 0;
+  z-index: 3;
+}
+
+#topping-1 {
+  padding: 80 0;
+  z-index: 4;
+}
+
+#topping-2 {
+  padding: 90 0;
+  z-index: 5;
+}
+
+#burger-base {
+  padding-top: 150px;
+  z-index: 0;
+}
+
+#burger-lid {
+  padding-bottom: 150px;
+  z-index: 10;
+}
+
+#protein-main {
+  z-index: 2;
+  padding-top: 100px;
+}
