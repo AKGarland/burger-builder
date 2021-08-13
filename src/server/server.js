@@ -55,10 +55,10 @@ server.post('/select-base', async (req, res) =>
 
 server.post('/select-protein/', async (req, res) =>
   await routes.selectProteinRoute(req, res)
-)
+);
 
 server.post('/remove-topping/:index', async (req, res) =>
-  await routes.removeTopping(req, res)
-)
+  await routes.removeToppingRoute(req, res)
+);
 
 server.listen(6789, () => console.log('Server is running'));

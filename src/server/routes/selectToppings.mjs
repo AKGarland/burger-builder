@@ -12,12 +12,9 @@ const selectToppingsRoute = async (req, res) => {
     const topping = allToppings.filter(topping => topping.name === req.body['topping'])[0];
     topping !== undefined ? toppings.push(topping) : undefined;
     req.session.ingredients.toppings = toppings;
-
-    res.writeHead(303,
-      { Location: '/' })
-  } else {
-    res.writeHead(400);
   }
+  res.writeHead(303,
+    { Location: '/' });
   return res.end();
 }
 

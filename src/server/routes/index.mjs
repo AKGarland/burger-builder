@@ -6,4 +6,4 @@ import removeTopping from "./removeTopping.mjs";
 export { selectToppingsRoute as selectToppingsRoute };
 export { selectBase as selectBaseRoute };
 export { selectProtein as selectProteinRoute };
-export { removeTopping as removeTopping };
+export { removeTopping as removeToppingRoute };
