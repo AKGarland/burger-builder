@@ -4,11 +4,7 @@ import { string, bool } from 'prop-types';
 export default function IngredientCard(props) {
   const submitId = `submit-${props.name.toLowerCase()}`;
   let buttonClassName = "btn btn-primary select-ingredient-btn select-" + props.type;
-  if (props.selected === true) {
-    buttonClassName += " selected";
-  } else {
-    buttonClassName = buttonClassName.replace(" selected", "");
-  }
+
   let buttonLabel;
   switch (props.type) {
     case "base":
@@ -20,6 +16,14 @@ export default function IngredientCard(props) {
     default:
       buttonLabel = "Add";
   }
+
+  if (props.selected === true) {
+    buttonClassName += " selected";
+    buttonLabel = "Selected";
+  } else {
+    buttonClassName = buttonClassName.replace(" selected", "");
+  }
+
   return (
     <div className="card ingredient-card">
       <img src={props.imgSrc} className="card-img-top ingredient-card-img" />

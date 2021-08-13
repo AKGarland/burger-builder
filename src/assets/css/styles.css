@@ -1,5 +1,12 @@
 .selected {
   background-color:rgb(102, 255, 102);
+  border: 2px solid rgb(109, 214, 109);
+}
+
+.selected:hover {
+  background-color:rgb(102, 255, 102);
+  border: 2px solid rgb(109, 214, 109);
+  cursor: not-allowed;
 }
 
 .ingredient-card-img {
