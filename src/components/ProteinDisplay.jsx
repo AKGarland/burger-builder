@@ -9,7 +9,7 @@ export default function ProteinDisplay(props) {
       <p className="font-monospace fs-3">Protein</p>
       <div id="base-error" style={{ color: 'red' }}></div>
       <form className="card-group base-display" id="protein-form"
-        action={"/select-protein/"} method="POST">
+        action="/select-protein/" method="POST">
         {props.proteins.map((protein, i) => {
           const selected = props.selection !== undefined && protein.name === props.selection.name;
           return (

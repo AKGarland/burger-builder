@@ -4,9 +4,8 @@ import BurgerDisplay from './BurgerDisplay.jsx';
 import ToppingsDisplay from './ToppingsDisplay.jsx';
 import BreadDisplay from './BreadDisplay.jsx';
 import ProteinDisplay from './ProteinDisplay.jsx';
-import toppings from '../data/toppings.js';
-import bases from '../data/bases.js';
-import proteins from '../data/proteins.js';
+import ExtrasDisplay from './ExtrasDisplay.jsx';
+import { toppings, bases, proteins, extras } from '../data';
 
 export default function App(props) {
   return (
@@ -23,6 +22,9 @@ export default function App(props) {
       <div className="row">
         <div className="column">
           <ToppingsDisplay toppings={toppings} />
+        </div>
+        <div className="column">
+          <ExtrasDisplay extras={extras} />
         </div>
       </div>
     </div>
