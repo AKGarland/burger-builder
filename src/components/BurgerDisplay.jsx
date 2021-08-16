@@ -7,7 +7,7 @@ export default function BurgerDisplay(props) {
 
   // these post requests should technically be deletes, maybe possible if these were anchor links instead?
   const listIngredient = (ingredient, i) => (<li className={"selected-" + ingredient.type} key={i}>
-    {ingredient.name}  <form method="POST" action={"/remove-" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
+    {ingredient.name}  <form method="POST" action={"/remove-item/" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
       <button className={"remove-item-btn"} id={"submit-" + ingredient.name.toLowerCase()}>-</button></form>
   </li >)
 
@@ -36,9 +36,6 @@ export default function BurgerDisplay(props) {
         <p className="card-text">
           <div className="column">
             <h4>Base: {base !== undefined ? (base.name) : ("Unselected")}</h4>
-            <ul>
-
-            </ul>
           </div>
           <div className="column">
             <h4>Toppings</h4>
