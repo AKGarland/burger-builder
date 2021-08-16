@@ -7,9 +7,14 @@ export default function BurgerDisplay(props) {
 
   // these post requests should technically be deletes, maybe possible if these were anchor links instead?
   const listIngredient = (ingredient, i) => (<li className={"selected-" + ingredient.type} key={i}>
-    {ingredient.name}  <form method="post" action={"/remove-topping/" + i} id="remove-topping-form">
-      <button className="remove-topping-btn" id={"submit-" + ingredient.name.toLowerCase()}>-</button></form>
+    {ingredient.name}  <form method="POST" action={"/remove-" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
+      <button className={"remove-item-btn"} id={"submit-" + ingredient.name.toLowerCase()}>-</button></form>
   </li >)
+
+  const displayExtrasToppings = (list) => {
+    return list.map((ingredient, i) =>
+      (<img src={ingredient.imgSrc} className="card-img-top building-burger" id={`${ingredient.type}-${i}`} key={i} />))
+  }
 
   return (
     <div className="card mb-3">
@@ -18,9 +23,8 @@ export default function BurgerDisplay(props) {
           (< img src={base.imgSrc.split('.png')[0] + "-base.png"}
             className="card-img-top building-burger" id="burger-base" />)
           : (<></>)}
-        {props.ingredients.toppings.map((ingredient, i) =>
-          (<img src={ingredient.imgSrc} className="card-img-top building-burger" id={`topping-${i}`} key={i} />))
-        }
+        {displayExtrasToppings(props.ingredients.extras)}
+        {displayExtrasToppings(props.ingredients.toppings)}
         {protein !== undefined ? (<img src={protein.imgSrc} className="card-img-top building-burger" id="protein-main" />)
           : (<></>)
         }
@@ -40,6 +44,14 @@ export default function BurgerDisplay(props) {
             <h4>Toppings</h4>
             <ul>
               {props.ingredients.toppings !== undefined ? props.ingredients.toppings.map((ingredient, i) =>
+                listIngredient(ingredient, i)
+              ) : (<></>)}
+            </ul>
+          </div>
+          <div className="column">
+            <h4>Extras</h4>
+            <ul>
+              {props.ingredients.extras !== undefined ? props.ingredients.extras.map((ingredient, i) =>
                 listIngredient(ingredient, i)
               ) : (<></>)}
             </ul>
