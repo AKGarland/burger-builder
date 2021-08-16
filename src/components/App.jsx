@@ -11,6 +11,12 @@ export default function App(props) {
   return (
     <div className="container-sm">
       <div className="row">
+        <div className="column col-8 font-monospace fs-1">Build your burger!</div>
+        <div className="column col-4 font-monospace fs-1">
+          <div className="total">£{props.session.total.toFixed(2)}</div>
+        </div>
+      </div>
+      <div className="row">
         <div className="column col-6">
           <BurgerDisplay ingredients={props.session.ingredients} />
         </div>

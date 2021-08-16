@@ -5,6 +5,7 @@ import cookieSession from 'cookie-session';
 import cookieParser from 'cookie-parser';
 import App from '../components/App.jsx';
 import * as routes from './routes';
+import calculateTotal from './util/calculateTotal.mjs';
 
 const server = express();
 server.use(express.static('dist'));
@@ -16,7 +17,6 @@ server.use(cookieParser());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
-
 server.get('/', (req, res) => {
   if (req.session.ingredients === undefined) {
     req.session.ingredients = {
@@ -26,6 +26,13 @@ server.get('/', (req, res) => {
       extras: []
     };
   }
+
+  if (req.session.total === undefined) {
+    req.session.total = 0;
+  } else {
+    req.session.total = calculateTotal(req.session.ingredients);
+  }
+
   const initialMarkup = ReactDOMServer.renderToString(<App session={req.session} />);
 
   res.send(`
@@ -61,6 +68,8 @@ server.post('/remove-item/:type/:index', async (req, res) =>
   await routes.removeToppingRoute(req, res)
 );
 
-server.post('/add-extra/', async (req, res) => await routes.addExtraRoute(req, res));
+server.post('/add-extra/', async (req, res) =>
+  await routes.addExtraRoute(req, res)
+);
 
 server.listen(6789, () => console.log('Server is running'));

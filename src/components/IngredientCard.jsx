@@ -12,10 +12,8 @@ export default function IngredientCard(props) {
       buttonLabel = "Select";
       break;
     case "topping":
-      buttonLabel = "Add";
-      break;
     case "extra":
-      buttonLabel = `Add  £${props.price.toFixed(2)}`
+      buttonLabel = "Add";
       break;
     default:
       buttonLabel = "Add";
@@ -32,7 +30,9 @@ export default function IngredientCard(props) {
     <div className="card ingredient-card">
       <img src={props.imgSrc} className="card-img-top ingredient-card-img" />
       <div className="card-body">
-        <h5 className="card-title">{props.name}</h5>
+        <h5 className="card-title">
+          <span className="ingredient-name">{props.name}</span>{props.price !== undefined ? (<span className="ingredient-price">{"£" + props.price.toFixed(2)}</span>) : undefined}
+        </h5>
         <p className="card-text">{props.description}</p>
         <button className={buttonClassName + " ingredient-btn"} id={submitId}
           name={props.type} value={props.name} type="submit">{buttonLabel}</button>
