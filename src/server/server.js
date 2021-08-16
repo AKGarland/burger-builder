@@ -61,4 +61,6 @@ server.post('/remove-topping/:index', async (req, res) =>
   await routes.removeToppingRoute(req, res)
 );
 
+server.post('/add-extra/', async (req, res) => await routes.addExtraRoute(req, res));
+
 server.listen(6789, () => console.log('Server is running'));
