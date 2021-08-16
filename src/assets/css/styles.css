@@ -10,13 +10,13 @@
 }
 
 .ingredient-card-img {
-  width: 200;
-  height: 150;
+  width: 200px;
+  height: 150px;
 }
 
 .burger-display-container {
-  height: 400;
-  width: 450;
+  height: 400px;
+  width: 450px;
   background: #aaade2;
 }
 
@@ -34,12 +34,12 @@
   height: 400px;
 }
 
-.error {
-  color:red;
+.save-img-btn {
+  width: 450px;
 }
 
-.ingredient-btn {
-  margin: '0 35%'
+.error {
+  color:red;
 }
 
 .toppings {
@@ -67,17 +67,17 @@
 }
 
 #topping-0 {
-  padding: 70 0;
+  padding: 70px 0px;
   z-index: 3;
 }
 
 #topping-1 {
-  padding: 80 0;
+  padding: 80px 0px;
   z-index: 4;
 }
 
 #topping-2 {
-  padding: 90 0;
+  padding: 90px 0px;
   z-index: 5;
 }
 
@@ -92,6 +92,6 @@
 }
 
 #protein-main {
-  z-index: 2;
   padding-top: 100px;
+  z-index: 2;
 }

@@ -4,7 +4,7 @@ const addToppingSetup = () => {
     let selectedToppings = document.getElementsByClassName('selected-topping');
     if (selectedToppings.length >= 3) {
       event.preventDefault();
-      document.getElementById('topping-error').innerHTML = "Cannot select more than 3 toppings";
+      document.getElementById('topping-error').innerHTML = 'Cannot select more than 3 toppings';
     }
   });
 }

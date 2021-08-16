@@ -24,7 +24,7 @@ export default function BurgerDisplay(props) {
 
   return (
     <div className="card mb-3">
-      <div className="burger-display-container">
+      <div className="burger-display-container" id="burger-img-container">
         {base !== undefined ?
           (< img src={base.imgSrc.split('.png')[0] + "-base.png"}
             className="card-img-top building-burger" id="burger-base" />)
@@ -38,6 +38,7 @@ export default function BurgerDisplay(props) {
           (< img src={base.imgSrc.split('.png')[0] + "-lid.png"} className="card-img-top building-burger" id="burger-lid" />)
           : (<></>)}
       </div>
+      <div className="btn btn-primary save-img-btn" id="save-img-btn">Save image</div>
       <div className="card-body">
         <p className="card-text">
           <div className="column">
