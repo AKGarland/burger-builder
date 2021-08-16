@@ -14,6 +14,12 @@
   height: 150;
 }
 
+.burger-display-container {
+  height: 400;
+  width: 450;
+  background: #aaade2;
+}
+
 .remove-item-btn {
   background-color: red;
   border-radius: 1.5em;
@@ -28,8 +34,31 @@
   height: 400px;
 }
 
+.error {
+  color:red;
+}
+
+.ingredient-btn {
+  margin: '0 35%'
+}
+
 .toppings {
   height: 200px;
+}
+
+.selection-list-item {
+  display: flex;
+}
+
+.selected-price {
+  display: flex;
+  flex: 10%;
+  font-style: italic;
+}
+
+.selected-name {
+  display: flex;
+  flex: 60%;
 }
 
 #topping-0 {

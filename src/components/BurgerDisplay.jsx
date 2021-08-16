@@ -7,8 +7,14 @@ export default function BurgerDisplay(props) {
 
   // these post requests should technically be deletes, maybe possible if these were anchor links instead?
   const listIngredient = (ingredient, i) => (<li className={"selected-" + ingredient.type} key={i}>
-    {ingredient.name}  <form method="POST" action={"/remove-item/" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
-      <button className={"remove-item-btn"} id={"submit-" + ingredient.name.toLowerCase()}>-</button></form>
+    <div className="selection-list-item">
+      <span className="selected-name">{ingredient.name}</span>
+      {ingredient.price !== undefined ? (<span className="selected-price">£{ingredient.price.toFixed(2)}</span>) : (<></>)}
+
+      <form method="POST" action={"/remove-item/" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
+        <button className={"remove-item-btn"} id={"submit-" + ingredient.name.toLowerCase()}>-</button>
+      </form>
+    </div>
   </li >)
 
   const displayExtrasToppings = (list) => {
@@ -18,7 +24,7 @@ export default function BurgerDisplay(props) {
 
   return (
     <div className="card mb-3">
-      <div className="burger-display-container" style={{ height: 400, width: 450, background: '#aaade2' }}>
+      <div className="burger-display-container">
         {base !== undefined ?
           (< img src={base.imgSrc.split('.png')[0] + "-base.png"}
             className="card-img-top building-burger" id="burger-base" />)

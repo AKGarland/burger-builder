@@ -8,10 +8,14 @@ export default function IngredientCard(props) {
   let buttonLabel;
   switch (props.type) {
     case "base":
+    case "protein":
       buttonLabel = "Select";
       break;
     case "topping":
       buttonLabel = "Add";
+      break;
+    case "extra":
+      buttonLabel = `Add  £${props.price.toFixed(2)}`
       break;
     default:
       buttonLabel = "Add";
@@ -30,8 +34,8 @@ export default function IngredientCard(props) {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
-        <button className={buttonClassName} id={submitId}
-          style={{ margin: '0 35%' }} name={props.type} value={props.name} type="submit">{buttonLabel}</button>
+        <button className={buttonClassName + " ingredient-btn"} id={submitId}
+          name={props.type} value={props.name} type="submit">{buttonLabel}</button>
       </div>
     </div>
   );

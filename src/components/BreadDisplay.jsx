@@ -6,7 +6,7 @@ export default function BreadDisplay(props) {
   return (
     <>
       <p className="font-monospace fs-3">Bread base</p>
-      <div id="base-error" style={{ color: 'red' }}></div>
+      <div id="base-error" className="error"></div>
       <form className="card-group base-display" id="base-form"
         action={"/select-base/"} method="POST">
         {props.bases.map((base, i) => {

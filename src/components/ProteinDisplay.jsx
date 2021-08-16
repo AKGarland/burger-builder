@@ -7,7 +7,7 @@ export default function ProteinDisplay(props) {
   return (
     <>
       <p className="font-monospace fs-3">Protein</p>
-      <div id="base-error" style={{ color: 'red' }}></div>
+      <div id="base-error" className="error"></div>
       <form className="card-group base-display" id="protein-form"
         action="/select-protein/" method="POST">
         {props.proteins.map((protein, i) => {
