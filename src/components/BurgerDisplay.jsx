@@ -19,7 +19,8 @@ export default function BurgerDisplay(props) {
 
   const displayExtrasToppings = (list) => {
     return list.map((ingredient, i) =>
-      (<img src={ingredient.imgSrc} className="card-img-top building-burger" id={`${ingredient.type}-${i}`} key={i} />))
+    (<img src={ingredient.imgSrc} className={`card-img-top building-burger burger-${ingredient.type}`}
+      id={`${ingredient.type}-${i}`} key={i} />))
   }
 
   return (
@@ -31,7 +32,11 @@ export default function BurgerDisplay(props) {
           : (<></>)}
         {displayExtrasToppings(props.ingredients.extras)}
         {displayExtrasToppings(props.ingredients.toppings)}
-        {protein !== undefined ? (<img src={protein.imgSrc} className="card-img-top building-burger" id="protein-main" />)
+        {protein !== undefined ?
+          protein.double ?
+            (<><img src={protein.imgSrc} className="card-img-top building-burger" id="protein-main" />
+              <img src={protein.imgSrc} className="card-img-top building-burger" id="protein-double" /></>)
+            : (<img src={protein.imgSrc} className="card-img-top building-burger" id="protein-main" />)
           : (<></>)
         }
         {base !== undefined ?

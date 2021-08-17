@@ -66,6 +66,12 @@
   text-align: right;
 }
 
+.burger-extra {
+  z-index: 6;
+  height: 150px;
+  margin-top: 100px;
+}
+
 #topping-0 {
   padding: 70px 0px;
   z-index: 3;
@@ -94,4 +100,9 @@
 #protein-main {
   padding-top: 100px;
   z-index: 2;
+}
+
+#protein-double {
+  z-index: 2;
+  padding-left:10px
 }
