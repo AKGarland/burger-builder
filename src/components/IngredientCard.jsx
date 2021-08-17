@@ -39,7 +39,9 @@ export default function IngredientCard(props) {
         {props.type === 'protein' && props.selected === true ? (<div className="checkbox-display">
           <p className="checkbox-prompt">Double up?</p>
           <span className="double-up-price">£{(props.price / 2).toFixed(2)}</span>
-          <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type} value={props.name} id={"double-" + props.type + "-check"} ></input>
+          {props.double ? <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type}
+            value={props.name} id={"double-" + props.type + "-check"} disabled></input> : <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type}
+              value={props.name} id={"double-" + props.type + "-check"}></input>}
         </div>) : (<></>)}
       </div>
     </div>
@@ -52,5 +54,6 @@ IngredientCard.propTypes = {
   description: string,
   type: string,
   selected: bool,
-  price: number
+  price: number,
+  double: bool
 };

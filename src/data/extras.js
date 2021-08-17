@@ -2,7 +2,7 @@ const extras = [
   {
     imgSrc: './images/bacon.png',
     name: 'Bacon',
-    description: 'Tasty bacon',
+    description: 'Tasty bacon.',
     type: 'extra',
     price: 2.50
   },

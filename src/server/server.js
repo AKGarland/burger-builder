@@ -73,10 +73,7 @@ server.post('/add-extra/', async (req, res) =>
 
 server.post('/double-protein/', async (req, res) => {
   console.log(req.body);
-  res.writeHead(303,
-    { Location: '/' });
-
-  return res.end();
+  await routes.doubleProteinRoute(req, res);
 });
 
 server.listen(6789, () => console.log('Server is running'));
