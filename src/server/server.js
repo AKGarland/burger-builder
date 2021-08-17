@@ -71,9 +71,8 @@ server.post('/add-extra/', async (req, res) =>
   await routes.addExtraRoute(req, res)
 );
 
-server.post('/double-protein/', async (req, res) => {
-  console.log(req.body);
-  await routes.doubleProteinRoute(req, res);
-});
+server.post('/double-protein/', async (req, res) =>
+  await routes.doubleProteinRoute(req, res)
+);
 
 server.listen(6789, () => console.log('Server is running'));

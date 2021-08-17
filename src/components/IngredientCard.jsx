@@ -4,6 +4,7 @@ import { string, bool, number } from 'prop-types';
 export default function IngredientCard(props) {
   const submitId = `submit-${props.name.toLowerCase()}`;
   let buttonClassName = "btn btn-primary select-ingredient-btn select-" + props.type;
+  if (props.double != undefined) console.log('ingredient card' + props.double)
 
   let buttonLabel;
   switch (props.type) {
@@ -39,9 +40,8 @@ export default function IngredientCard(props) {
         {props.type === 'protein' && props.selected === true ? (<div className="checkbox-display">
           <p className="checkbox-prompt">Double up?</p>
           <span className="double-up-price">£{(props.price / 2).toFixed(2)}</span>
-          {props.double ? <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type}
-            value={props.name} id={"double-" + props.type + "-check"} disabled></input> : <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type}
-              value={props.name} id={"double-" + props.type + "-check"}></input>}
+          <input type="checkbox" className={`form-check-input double-up-checkbox double-up-${props.type} selected-${props.double}`}
+            value={props.name} id={"double-" + props.type + "-check"} defaultChecked={props.double}></input>
         </div>) : (<></>)}
       </div>
     </div>

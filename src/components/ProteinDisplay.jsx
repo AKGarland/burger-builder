@@ -2,7 +2,7 @@ import React from 'react';
 import { array, object } from 'prop-types';
 import IngredientCard from './IngredientCard.jsx';
 
-export default function ProteinDisplay(props) {
+export default function ProteinDisplay({ proteins, selection }) {
 
   return (
     <>
@@ -10,8 +10,9 @@ export default function ProteinDisplay(props) {
       <div id="base-error" className="error"></div>
       <form className="card-group base-display" id="protein-form"
         action="/select-protein/" method="POST">
-        {props.proteins.map((protein, i) => {
-          const selected = props.selection !== undefined && protein.name === props.selection.name;
+        {proteins.map((protein, i) => {
+          const selected = selection !== undefined && protein.name === selection.name;
+          protein.double = selection !== undefined && selection.double;
           return (
             <IngredientCard {...protein} selected={selected} key={i} />
           )
