@@ -48,6 +48,10 @@ export default function BurgerDisplay(props) {
         <p className="card-text">
           <div className="column">
             <h4>Base: {base !== undefined ? (base.name) : ("Unselected")}</h4>
+            <h4 className="protein-selection-list"><span className="protein-selection-label">Protein: {protein !== undefined ? (protein.name) : ("Unselected")}</span>
+              <span className="protein-selection-double">{protein !== undefined && protein.double ? ("x2") : (<></>)}</span>
+              <span className="protein-price">£{protein !== undefined ? protein.double ? ((protein.price * 1.5).toFixed(2)) : (protein.price.toFixed(2)) : (<></>)}</span>
+            </h4>
           </div>
           <div className="column">
             <h4>Toppings</h4>
