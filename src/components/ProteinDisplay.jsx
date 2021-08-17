@@ -13,7 +13,8 @@ export default function ProteinDisplay(props) {
         {props.proteins.map((protein, i) => {
           const selected = props.selection !== undefined && protein.name === props.selection.name;
           return (
-            <IngredientCard {...protein} selected={selected} key={i} />)
+            <IngredientCard {...protein} selected={selected} key={i} />
+          )
         })}
       </form>
     </>

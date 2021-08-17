@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, bool } from 'prop-types';
+import { string, bool, number } from 'prop-types';
 
 export default function IngredientCard(props) {
   const submitId = `submit-${props.name.toLowerCase()}`;
@@ -36,6 +36,11 @@ export default function IngredientCard(props) {
         <p className="card-text">{props.description}</p>
         <button className={buttonClassName + " ingredient-btn"} id={submitId}
           name={props.type} value={props.name} type="submit">{buttonLabel}</button>
+        {props.type === 'protein' && props.selected === true ? (<div className="checkbox-display">
+          <p className="checkbox-prompt">Double up?</p>
+          <span className="double-up-price">£{(props.price / 2).toFixed(2)}</span>
+          <input type="checkbox" className={"form-check-input double-up-checkbox double-up-" + props.type} value={props.name} id={"double-" + props.type + "-check"} ></input>
+        </div>) : (<></>)}
       </div>
     </div>
   );
@@ -46,5 +51,6 @@ IngredientCard.propTypes = {
   name: string,
   description: string,
   type: string,
-  selected: bool
+  selected: bool,
+  price: number
 };

@@ -39,7 +39,6 @@ server.get('/', (req, res) => {
   <html>
     <head>
       <title>Build a Burger!</title>
-      <script src="/main.js"></script>
       <script src="/bundle.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -71,5 +70,13 @@ server.post('/remove-item/:type/:index', async (req, res) =>
 server.post('/add-extra/', async (req, res) =>
   await routes.addExtraRoute(req, res)
 );
+
+server.post('/double-protein/', async (req, res) => {
+  console.log(req.body);
+  res.writeHead(303,
+    { Location: '/' });
+
+  return res.end();
+});
 
 server.listen(6789, () => console.log('Server is running'));
