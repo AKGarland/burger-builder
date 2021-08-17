@@ -4,7 +4,6 @@ import { string, bool, number } from 'prop-types';
 export default function IngredientCard(props) {
   const submitId = `submit-${props.name.toLowerCase()}`;
   let buttonClassName = "btn btn-primary select-ingredient-btn select-" + props.type;
-  if (props.double != undefined) console.log('ingredient card' + props.double)
 
   let buttonLabel;
   switch (props.type) {
