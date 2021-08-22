@@ -63,7 +63,7 @@ server.post('/select-protein/', async (req, res) =>
   await routes.selectProteinRoute(req, res)
 );
 
-server.post('/remove-item/:type/:index', async (req, res) =>
+server.post('/remove-item/:type/:id', async (req, res) =>
   await routes.removeToppingRoute(req, res)
 );
 

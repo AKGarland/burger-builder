@@ -11,7 +11,7 @@ export default function BurgerDisplay(props) {
       <span className="selected-name">{ingredient.name}</span>
       {ingredient.price !== undefined ? (<span className="selected-price">£{ingredient.price.toFixed(2)}</span>) : (<></>)}
 
-      <form method="POST" action={"/remove-item/" + ingredient.type + "/" + i} id={"/remove-" + ingredient.type + "-form"}>
+      <form method="POST" action={"/remove-item/" + ingredient.type + "/" + ingredient.id} id={"/remove-" + ingredient.type + "-form"}>
         <button className={"remove-item-btn"} id={"submit-" + ingredient.name.toLowerCase()}>-</button>
       </form>
     </div>
@@ -20,7 +20,7 @@ export default function BurgerDisplay(props) {
   const displayExtrasToppings = (list) => {
     return list.map((ingredient, i) =>
     (<img src={ingredient.imgSrc} className={`card-img-top building-burger burger-${ingredient.type}`}
-      id={`${ingredient.type}-${i}`} key={i} />))
+      id={`${ingredient.type}-${ingredient.id}`} key={i} />))
   }
 
   return (

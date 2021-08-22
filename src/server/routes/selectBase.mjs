@@ -1,4 +1,4 @@
-import allBases from '../../data/bases';
+import {bases as allBases} from '../../data';
 
 const selectBase = (req, res) => {
   req.session.ingredients.base = allBases.filter(base => base.name === req.body['base'])[0];

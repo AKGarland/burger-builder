@@ -1,5 +1,6 @@
 const proteins = [
   {
+    id:1,
     imgSrc: './images/tofu.png',
     name: 'Tofu',
     description: 'Firm, marinated, grilled tofu strips, suitable for vegans.',
@@ -8,6 +9,7 @@ const proteins = [
     double: false
   },
   {
+    id:2,
     imgSrc: './images/beef.png',
     name: 'Beef patty',
     description: 'The tradtitional beef patty. Moo.',
@@ -16,6 +18,7 @@ const proteins = [
     double: false
   },
   {
+    id:3,
     imgSrc: './images/chicken.png',
     name: 'Breaded chicken',
     description: 'Breaded, fried, free-range chicken.',

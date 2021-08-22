@@ -1,4 +1,4 @@
-import allExtras from '../../data/extras';
+import {extras as allExtras} from '../../data';
 
 const addExtra = async (req, res) => {
   res.setHeader('Content-Type', 'text/html');

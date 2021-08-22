@@ -1,5 +1,6 @@
 const extras = [
   {
+    id:1,
     imgSrc: './images/bacon.png',
     name: 'Bacon',
     description: 'Tasty bacon.',
@@ -7,6 +8,7 @@ const extras = [
     price: 2.50
   },
   {
+    id:2,
     imgSrc: './images/avocado.png',
     name: 'Smashed avocado',
     description: 'Green, smashed, nature\'s green smashed thing.',

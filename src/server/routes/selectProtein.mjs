@@ -1,4 +1,4 @@
-import allProtein from '../../data/proteins';
+import {proteins as allProtein} from '../../data';
 
 const selectProtein = async (req, res) => {
   res.setHeader('Content-Type', 'text/html');
