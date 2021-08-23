@@ -44,6 +44,9 @@ export default function BurgerDisplay(props) {
           : (<></>)}
       </div>
       <div className="btn btn-primary save-img-btn" id="save-img-btn">Save image</div>
+      <form action="/save-burger/" method="POST">
+        <button className="btn btn-primary save-burger-to-db" id="save-burger-btn">Save to db</button>
+      </form>
       <div className="card-body">
         <p className="card-text">
           <div className="column">

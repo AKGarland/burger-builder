@@ -1,5 +1,6 @@
 import express from 'express';
 import React from 'react';
+import mongoose from 'mongoose';
 import ReactDOMServer from 'react-dom/server';
 import cookieSession from 'cookie-session';
 import cookieParser from 'cookie-parser';
@@ -16,6 +17,9 @@ server.use(cookieSession({
 server.use(cookieParser());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+
+const mongoOpts = { useNewUrlParser: true, useUnifiedTopology: true };
+const db = mongoose.connect('mongodb://localhost:27017/BurgerDB', mongoOpts);
 
 server.get('/', (req, res) => {
   if (req.session.ingredients === undefined) {
@@ -74,5 +78,9 @@ server.post('/add-extra/', async (req, res) =>
 server.post('/double-protein/', async (req, res) =>
   await routes.doubleProteinRoute(req, res)
 );
+
+server.post('/save-burger/', async (req, res) => {
+  await routes.saveBurgerRoute(req, res)
+});
 
 server.listen(6789, () => console.log('Server is running'));
